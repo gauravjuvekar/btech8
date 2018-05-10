@@ -1,0 +1,6 @@
+[submodule "wsd"]
+	path = wsd
+	url = https://github.com/gauravjuvekar/wsd.git
+[submodule "extractive"]
+	path = extractive
+	url = https://github.com/gauravjuvekar/extractive.git
