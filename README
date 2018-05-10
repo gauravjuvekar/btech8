@@ -1,1 +1,2 @@
-Run ./install.sh
+Run
+./install.sh /path/to/data/folder
