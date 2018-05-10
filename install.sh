@@ -23,7 +23,11 @@ function setup_s2v() {
 
 git submodule update --init --recursive
 
-sudo apt-get install -y python3-pip cython3 python3-dev  python-pip cython python-dev build-essential
+sudo apt-get install -y \
+    python3-pip cython3 python3-dev  \
+    python-pip cython python-dev \
+    build-essential \
+    xmlstarlet
 pip3 install pipenv
 
 setup_all ./wsd
