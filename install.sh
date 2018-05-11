@@ -80,6 +80,8 @@ cd "$THIS_DIR"
 THIS_DIR=$(pwd)
 cd "$DATA_DIR/cmplg-xml"
 rm 9604012.xml 9604024.xml 9605004.xml
+mkdir -p gold
+mkdir -p bodies
 for filename in ./*.xml; do
     xmlstarlet sel -t -v '//ABSTRACT' -n $filename > ./gold/`basename -s '.xml' "$filename"`_gold.txt
     xmlstarlet sel -t -v '//BODY' -n $filename > ./bodies/`basename -s '.xml' "$filename"`_body.txt
