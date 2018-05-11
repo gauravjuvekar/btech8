@@ -12,3 +12,10 @@ python wsd.py
 # sif_embeds_nopcr (uncomment the line 's2v') in the 'ENABLE' block (line 42 of
 # wsd.py)
 
+
+
+Download following files and save them to one folder
+sent2vec_wiki_unigrams.bin from https://github.com/epfml/sent2vec                                      https://drive.google.com/open?id=0B6VhzidiLvjSa19uYWlLUEkzX3c
+glove.840B.300d.zip        from https://nlp.stanford.edu/projects/glove                                http://nlp.stanford.edu/data/glove.840B.300d.zip
+cmplg-xml.tar.gz           from https://www-nlpir.nist.gov/related_projects/tipster_summac/cmp_lg.html https://www-nlpir.nist.gov/related_projects/tipster_summac/cmplg-xml.tar.gz
+OpinosisDataset1.0_0.zip   from https://github.com/kavgan/opinosis/                                    https://github.com/kavgan/opinosis/blob/master/OpinosisDataset1.0_0.zip?raw=true

@@ -2,6 +2,7 @@
 set -x
 
 DATA_DIR=$(realpath "$1")
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
 function setup_all() {
@@ -51,7 +52,7 @@ cd ..
 
 THIS_DIR=$(pwd)
 cd "$DATA_DIR"
-md5sum -c md5sums.txt
+md5sum -c "$SCRIPT_DIR/md5sums.txt"
 cd "$THIS_DIR"
 
 THIS_DIR=$(pwd)
@@ -70,6 +71,7 @@ then
     unzip glove.840B.300d.zip
 fi
 unzip semeval-2015-task-13-v1.0.zip
+unzip OpinosisDataset1.0_0.zip
 cd "$THIS_DIR"
 
 THIS_DIR=$(pwd)

@@ -1,0 +1,8 @@
+e3d085747fefe65c52c369eff285128d  cmplg-xml.tar.gz
+2ffafcc9f9ae46fc8c95f32372976137  glove.840B.300d.zip
+1c892c4707a8a1a508b01a01735c0339  GoogleNews-vectors-negative300.bin.gz
+6999737cff37dc9a2b2e491270e117b1  semcor3.0.tar.gz
+d660d1ffcd572582b45efe61e5d5a27d  semeval-2015_task13_trial.zip
+0854e32a1895ced9b910f479acedbf56  sent2vec_wiki_unigrams.bin
+82ede59e0474e886771d98d2f469a684  semeval-2015-task-13-v1.0.zip
+5a161d11c9d780abf947c51c1b3add9f  OpinosisDataset1.0_0.zip
