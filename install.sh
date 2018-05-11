@@ -48,7 +48,6 @@ link_data "$DATA_DIR"
 cd ..
 
 cd SIF
-link_data "$DATA_DIR"
 pipenv sync --verbose
 cd ..
 
