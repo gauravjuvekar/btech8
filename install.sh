@@ -126,3 +126,9 @@ cd extractive
 pipenv run python -c "import nltk; nltk.download('perluniprops')"
 pipenv run python -c "import nltk; nltk.download('punkt')"
 cd ..
+
+cd wsd
+pipenv run python -c "import nltk; nltk.download('wordnet')"
+pipenv run python -c "import nltk; nltk.download('perluniprops')"
+pipenv run python -c "import nltk; nltk.download('punkt')"
+cd ..
