@@ -88,7 +88,8 @@ cd "$THIS_DIR"
 
 THIS_DIR=$(pwd)
 cd "$DATA_DIR/cmplg-xml"
-rm  -f 9604012.xml 9604024.xml 9605004.xml 9502033.xml
+# Bad files
+rm  -f 9604012.xml 9604024.xml 9605004.xml 9502033.xml 9502039.xml
 
 for filename in ./*.xml
 do
