@@ -71,7 +71,14 @@ then
     unzip glove.840B.300d.zip
 fi
 unzip semeval-2015-task-13-v1.0.zip
-unzip OpinosisDataset1.0_0.zip
+mkdir opinosis
+unzip -d opinosis OpinosisDataset1.0_0.zip
+rm -rf opinosis/examples
+rm -rf opinosis/scripts
+rm -rf opinosis/OpinosisDataset1.2.pdf
+rm opinosis/topics/updates_garmin_nuvi_255W_gps.txt.data
+rm -rf opinosis/summaries-gold/updates_garmin_nuvi_255W_gps
+
 cd "$THIS_DIR"
 
 THIS_DIR=$(pwd)
