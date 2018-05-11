@@ -110,7 +110,7 @@ cd "$DATA_DIR/opinosis"
 rm -rf examples
 rm -rf scripts
 rm -rf OpinosisDataset1.2.pdf
-rm topics/updates_garmin_nuvi_255W_gps.txt.data
+rm -f topics/updates_garmin_nuvi_255W_gps.txt.data
 rm -rf summaries-gold/updates_garmin_nuvi_255W_gps
 cd "$THIS_DIR"
 
@@ -122,4 +122,7 @@ then
 fi
 cd ..
 
-
+cd extractive
+pipenv run python -c "import nltk; nltk.download('perluniprops')"
+pipenv run python -c "import nltk; nltk.download('punkt')"
+cd ..
