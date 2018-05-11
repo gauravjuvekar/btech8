@@ -69,7 +69,7 @@ if [ ! -f glove.840B.300d.txt ]
 then
     unzip glove.840B.300d.zip
 fi
-unzip semeval-2015_task13_trial.zip
+unzip semeval-2015-task-13-v1.0.zip
 cd "$THIS_DIR"
 
 THIS_DIR=$(pwd)
