@@ -73,18 +73,27 @@ fi
 unzip semeval-2015-task-13-v1.0.zip
 mkdir opinosis
 unzip -d opinosis OpinosisDataset1.0_0.zip
-rm -rf opinosis/examples
-rm -rf opinosis/scripts
-rm -rf opinosis/OpinosisDataset1.2.pdf
-rm opinosis/topics/updates_garmin_nuvi_255W_gps.txt.data
-rm -rf opinosis/summaries-gold/updates_garmin_nuvi_255W_gps
-
 cd "$THIS_DIR"
 
 THIS_DIR=$(pwd)
 cd "$DATA_DIR/cmplg-xml"
 rm 9604012.xml 9604024.xml 9605004.xml
+for filename in ./*.xml; do
+    xmlstarlet sel -t -v '//ABSTRACT' -n $filename > ./gold/`basename -s '.xml' "$filename"`_gold.txt
+    xmlstarlet sel -t -v '//BODY' -n $filename > ./bodies/`basename -s '.xml' "$filename"`_body.txt
+done
 cd "$THIS_DIR"
+
+
+THIS_DIR=$(pwd)
+cd "$DATA_DIR/opinosis"
+rm -rf examples
+rm -rf scripts
+rm -rf OpinosisDataset1.2.pdf
+rm topics/updates_garmin_nuvi_255W_gps.txt.data
+rm -rf summaries-gold/updates_garmin_nuvi_255W_gps
+cd "$THIS_DIR"
+
 
 cd SIF
 if [ ! -f "$DATA_DIR/sif.db" ]
