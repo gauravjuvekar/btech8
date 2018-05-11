@@ -112,6 +112,14 @@ rm -rf scripts
 rm -rf OpinosisDataset1.2.pdf
 rm -f topics/updates_garmin_nuvi_255W_gps.txt.data
 rm -rf summaries-gold/updates_garmin_nuvi_255W_gps
+mkdir gold
+mv summaries-gold/**/*.gold gold
+rmdir summaries-gold/*
+rmdir summaries-gold
+cd gold
+rename -E 's/_//g' *
+rename -E 's/\.([0-9])\.gold/_reference$1.txt/g' *
+cd ..
 cd "$THIS_DIR"
 
 
