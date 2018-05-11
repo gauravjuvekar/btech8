@@ -88,7 +88,7 @@ cd "$THIS_DIR"
 
 THIS_DIR=$(pwd)
 cd "$DATA_DIR/cmplg-xml"
-rm 9604012.xml 9604024.xml 9605004.xml
+rm  -f 9604012.xml 9604024.xml 9605004.xml
 mkdir -p gold
 mkdir -p bodies
 for filename in ./*.xml; do
