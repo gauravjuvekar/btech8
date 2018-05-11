@@ -67,14 +67,23 @@ if [ ! -f GoogleNews-vectors-negative300.bin ]
 then
     gzip -cd GoogleNews-vectors-negative300.bin.gz > GoogleNews-vectors-negative300.bin
 fi
-gzip -cd semcor3.0.tar.gz | tar -x
+if [ ! -d semcor3.0 ]
+then
+    gzip -cd semcor3.0.tar.gz | tar -x
+fi
 if [ ! -f glove.840B.300d.txt ]
 then
     unzip glove.840B.300d.zip
 fi
-unzip semeval-2015-task-13-v1.0.zip
-mkdir -p opinosis
-unzip -d opinosis OpinosisDataset1.0_0.zip
+if [ ! -d SemEval-2015-task-13-v1.0 ]
+then
+    unzip semeval-2015-task-13-v1.0.zip
+fi
+if [ ! -d opinosis ]
+then
+    mkdir -p opinosis
+    unzip -d opinosis OpinosisDataset1.0_0.zip
+fi
 cd "$THIS_DIR"
 
 THIS_DIR=$(pwd)
