@@ -88,12 +88,18 @@ cd "$THIS_DIR"
 
 THIS_DIR=$(pwd)
 cd "$DATA_DIR/cmplg-xml"
-rm  -f 9604012.xml 9604024.xml 9605004.xml
+rm  -f 9604012.xml 9604024.xml 9605004.xml 9502033.xml
+
+for filename in ./*.xml
+do
+    iconv -f utf-8 -t ascii//translit < "$filename" > "$filename".ascii
+done
+
 mkdir -p gold
 mkdir -p bodies
-for filename in ./*.xml; do
-    xmlstarlet sel -t -v '//ABSTRACT' -n $filename > ./gold/`basename -s '.xml' "$filename"`_gold.txt
-    xmlstarlet sel -t -v '//BODY' -n $filename > ./bodies/`basename -s '.xml' "$filename"`_body.txt
+for filename in ./*.xml.ascii; do
+    xmlstarlet sel -t -v '//ABSTRACT' -n $filename > ./gold/`basename -s '.xml.ascii' "$filename"`_gold.txt
+    xmlstarlet sel -t -v '//BODY' -n $filename > ./bodies/`basename -s '.xml.ascii' "$filename"`_body.txt
 done
 cd "$THIS_DIR"
 
