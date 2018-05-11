@@ -1,2 +1,14 @@
 Run
 ./install.sh /path/to/data/folder
+
+For the WSD example,
+cd wsd
+pipenv shell
+python wsd.py
+./evaluate.sh
+# It will create a result in the 'output' folder
+
+# To tweak the WSD example, Change the embedding to s2v_embeds or
+# sif_embeds_nopcr (uncomment the line 's2v') in the 'ENABLE' block (line 42 of
+# wsd.py)
+
