@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 DATA_DIR="$1"
 
@@ -41,4 +42,22 @@ cd extractive
 link_data "$DATA_DIR"
 cd ..
 
+THIS_DIR=$(pwd)
+cd "$DATA_DIR"
+md5sum -c md5sums.txt
+cd "$THIS_DIR"
+
+THIS_DIR=$(pwd)
+cd "$DATA_DIR"
+gzip -cd cmplg-xml.tar.gz | tar -x
+gzip -cd GoogleNews-vectors-negative300.bin.gz > GoogleNews-vectors-negative300.bin
+gzip -cd semcor3.0.tar.gz | tar -x
+unzip glove.840B.300d.zip
+unzip semeval-2015_task13_trial.zip
+cd "$THIS_DIR"
+
+THIS_DIR=$(pwd)
+cd "$DATA_DIR/cmplg-xml"
+rm 9604012.xml 9604024.xml 9605004.xml
+cd "$THIS_DIR"
 
