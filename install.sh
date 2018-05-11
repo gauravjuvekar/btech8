@@ -43,6 +43,12 @@ cd extractive
 link_data "$DATA_DIR"
 cd ..
 
+cd SIF
+link_data "$DATA_DIR"
+pipenv sync --verbose
+cd ..
+
+
 THIS_DIR=$(pwd)
 cd "$DATA_DIR"
 md5sum -c md5sums.txt
@@ -50,10 +56,19 @@ cd "$THIS_DIR"
 
 THIS_DIR=$(pwd)
 cd "$DATA_DIR"
-gzip -cd cmplg-xml.tar.gz | tar -x
-gzip -cd GoogleNews-vectors-negative300.bin.gz > GoogleNews-vectors-negative300.bin
+if [ ! -d cmplg-xml ]
+then
+    gzip -cd cmplg-xml.tar.gz | tar -x
+fi
+if [ ! -f GoogleNews-vectors-negative300.bin ]
+then
+    gzip -cd GoogleNews-vectors-negative300.bin.gz > GoogleNews-vectors-negative300.bin
+fi
 gzip -cd semcor3.0.tar.gz | tar -x
-unzip glove.840B.300d.zip
+if [ ! -f glove.840B.300d.txt ]
+then
+    unzip glove.840B.300d.zip
+fi
 unzip semeval-2015_task13_trial.zip
 cd "$THIS_DIR"
 
@@ -61,4 +76,11 @@ THIS_DIR=$(pwd)
 cd "$DATA_DIR/cmplg-xml"
 rm 9604012.xml 9604024.xml 9605004.xml
 cd "$THIS_DIR"
+
+cd SIF
+if [ ! -f "$DATA_DIR/sif.db" ]
+then
+    pipenv run python glove_to_db.py "$DATA_DIR/sif.db" "$DATA_DIR/glove.840B.300d.txt"
+fi
+cd ..
 
