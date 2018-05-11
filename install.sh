@@ -73,7 +73,7 @@ then
     unzip glove.840B.300d.zip
 fi
 unzip semeval-2015-task-13-v1.0.zip
-mkdir opinosis
+mkdir -p opinosis
 unzip -d opinosis OpinosisDataset1.0_0.zip
 cd "$THIS_DIR"
 
