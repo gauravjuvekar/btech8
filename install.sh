@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 
-DATA_DIR="$1"
+DATA_DIR=$(realpath "$1")
 
 
 function setup_all() {
@@ -28,7 +28,8 @@ sudo apt-get install -y \
     python3-pip cython3 python3-dev  \
     python-pip cython python-dev \
     build-essential \
-    xmlstarlet
+    xmlstarlet \
+    coreutils
 pip3 install pipenv
 
 setup_all ./wsd
