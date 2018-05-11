@@ -4,3 +4,6 @@
 [submodule "extractive"]
 	path = extractive
 	url = https://github.com/gauravjuvekar/extractive.git
+[submodule "SIF"]
+	path = SIF
+	url = https://github.com/gauravjuvekar/SIF.git
