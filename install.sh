@@ -15,7 +15,7 @@ function setup_all() {
 }
 
 function link_data() {
-    unlink data || true;
+    unlink ./data || true;
     ln -s "$1" data
 }
 
